@@ -9,7 +9,7 @@ cmd = 'TRUN /.:/'
 # check if the number of arguments passed to the script is exactly 2, but use 3 to check, do not ask me why.. with 2 it doesn't work!
 if len(sys.argv) != 3:
     print("Error: Incorrect number of arguments provided.")
-    print("Usage: ./automatedfind.py IP PORT")
+    print("Usage: ./Offset_finder.py IP PORT")
     sys.exit()
 
 # get input from the user for the point where the fuzz.py script crashed
